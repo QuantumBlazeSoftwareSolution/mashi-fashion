@@ -67,17 +67,7 @@ export default function Contact() {
                 </div>
               </div>
 
-              <div className="flex items-start gap-4">
-                <div className="p-3 bg-brand-blush/60 border border-brand-gold/20 rounded-lg text-brand-maroon flex-shrink-0">
-                  <Mail className="w-6 h-6" />
-                </div>
-                <div>
-                  <h3 className="font-display text-base font-bold text-brand-maroon mb-0.5">Email</h3>
-                  <p className="text-sm text-brand-charcoal/80">
-                    info@mashifashion.lk
-                  </p>
-                </div>
-              </div>
+
 
               <div className="flex items-start gap-4">
                 <div className="p-3 bg-brand-blush/60 border border-brand-gold/20 rounded-lg text-brand-maroon flex-shrink-0">
@@ -86,8 +76,8 @@ export default function Contact() {
                 <div>
                   <h3 className="font-display text-base font-bold text-brand-maroon mb-0.5">Atelier Hours</h3>
                   <p className="text-sm text-brand-charcoal/80 leading-relaxed">
-                    Monday - Saturday: 9:00 AM - 6:00 PM<br />
-                    Sunday: Closed (By Appointment Only)
+                    Tuesday - Sunday: 9:00 AM - 6:00 PM<br />
+                    Monday: Closed
                   </p>
                 </div>
               </div>

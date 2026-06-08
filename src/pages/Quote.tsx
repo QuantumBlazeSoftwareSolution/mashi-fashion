@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PageHeader from '../components/PageHeader';
-import { ArrowRight, ArrowLeft, Send, CheckCircle2, X, Mail } from 'lucide-react';
+import { ArrowRight, ArrowLeft, Send, CheckCircle2, X } from 'lucide-react';
 
 interface QuoteFormData {
   service: string;
@@ -87,16 +87,7 @@ Please review and send a price quote.`;
     window.open(waUrl, '_blank');
   };
 
-  const handleEmailSubmit = () => {
-    const emailTo = 'info@mashifashion.lk';
-    const subject = `Mashi Fashion - Quote Request from ${formData.name}`;
-    const textBody = getSummaryMessage()
-      .replace(/\*/g, '') // remove markdown bold stars
-      + `\n\n(Note: Please attach your ${selectedFiles.length > 0 ? selectedFiles.length : 'reference'} selected images from your device to this email before hitting send!)`;
-    
-    const mailtoUrl = `mailto:${emailTo}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(textBody)}`;
-    window.location.href = mailtoUrl;
-  };
+
 
   return (
     <div className="relative animate-fade-in-up" id="quote-page-container">
@@ -119,7 +110,7 @@ Please review and send a price quote.`;
               </h2>
               <div className="text-sm text-brand-charcoal/80 leading-relaxed max-w-sm mx-auto space-y-4">
                 <p>
-                  Thank you, {formData.name}. To submit your quote details directly to our Urapola atelier without server uploads, choose WhatsApp or Email below.
+                  Thank you, {formData.name}. To submit your quote details directly to our Urapola atelier without server uploads, click the button below to send via WhatsApp.
                 </p>
                 {selectedFiles.length > 0 && (
                   <div className="bg-brand-blush/60 border border-brand-gold/30 rounded-xl p-4 text-left text-xs text-brand-charcoal space-y-2">
@@ -127,9 +118,9 @@ Please review and send a price quote.`;
                       📎 How to Attach Selected Photos:
                     </span>
                     <ol className="list-decimal list-inside space-y-1 leading-relaxed font-sans text-brand-charcoal/90">
-                      <li>Choose your preferred contact method below.</li>
-                      <li>The text content will draft automatically.</li>
-                      <li><strong>Attach the {selectedFiles.length} photo(s) manually</strong> from your device gallery before sending!</li>
+                      <li>Click the Submit via WhatsApp button below.</li>
+                      <li>The chat window will open with details pre-filled.</li>
+                      <li><strong>Attach the {selectedFiles.length} photo(s) manually</strong> in the chat before sending!</li>
                     </ol>
                   </div>
                 )}
@@ -144,14 +135,6 @@ Please review and send a price quote.`;
                     <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.457L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.965C16.528 1.977 14.053.953 11.432.953c-5.44 0-9.866 4.372-9.87 9.802 0 1.764.476 3.49 1.38 5.02L1.993 21.8l6.197-1.619" />
                   </svg>
                   Submit via WhatsApp
-                </button>
-                
-                <button
-                  onClick={handleEmailSubmit}
-                  className="bg-brand-maroon hover:bg-brand-maroon-light text-white font-semibold py-3 px-6 rounded-md transition-all shadow-md flex items-center justify-center gap-2 cursor-pointer w-full text-sm uppercase tracking-wider"
-                >
-                  <Mail className="w-5 h-5 text-brand-gold" />
-                  Submit via Email
                 </button>
 
                 <button

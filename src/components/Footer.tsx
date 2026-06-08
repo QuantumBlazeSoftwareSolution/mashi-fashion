@@ -1,18 +1,15 @@
 import { Link } from 'react-router-dom';
-import { MapPin, Mail, Phone, Clock } from 'lucide-react';
+import { MapPin, Phone, Clock } from 'lucide-react';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
-  const handleSubscribe = (e: React.FormEvent) => {
-    e.preventDefault();
-    alert('Thank you for subscribing to Mashi Fashion updates!');
-  };
+
 
   return (
     <footer className="bg-brand-maroon-dark text-brand-ivory border-t border-brand-gold/20 pt-16 pb-8 font-sans" id="site-footer">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           
           {/* Brand Column */}
           <div className="space-y-4">
@@ -113,45 +110,18 @@ export default function Footer() {
                   +94 71 161 2290
                 </span>
               </li>
-              <li className="flex items-center gap-3">
-                <Mail className="w-4 h-4 text-brand-gold flex-shrink-0" />
-                <span className="text-brand-ivory/80">
-                  info@mashifashion.lk
-                </span>
-              </li>
+
               <li className="flex items-start gap-3">
                 <Clock className="w-4 h-4 text-brand-gold flex-shrink-0 mt-0.5" />
                 <span className="text-brand-ivory/80">
-                  Mon - Sat: 9:00 AM - 6:00 PM<br />
-                  Sunday: Closed (By Appointment Only)
+                  Tue - Sun: 9:00 AM - 6:00 PM<br />
+                  Monday: Closed
                 </span>
               </li>
             </ul>
           </div>
 
-          {/* Newsletter Column */}
-          <div className="space-y-4">
-            <h3 className="font-display text-lg font-semibold tracking-wider text-brand-gold">
-              Newsletter
-            </h3>
-            <p className="text-sm text-brand-ivory/80 leading-relaxed">
-              Subscribe to receive latest fashion updates, bridal rental deals, and lookbook releases.
-            </p>
-            <form onSubmit={handleSubscribe} className="flex flex-col gap-2">
-              <input
-                type="email"
-                required
-                placeholder="Your email address"
-                className="bg-brand-maroon/30 border border-brand-gold/30 rounded-md py-2 px-3 text-sm focus:outline-none focus:border-brand-gold text-brand-ivory placeholder-brand-ivory/50"
-              />
-              <button
-                type="submit"
-                className="bg-brand-gold hover:bg-brand-gold-dark text-brand-maroon-dark font-semibold text-xs tracking-wider uppercase py-2.5 rounded-md transition-colors duration-300"
-              >
-                Subscribe
-              </button>
-            </form>
-          </div>
+
 
         </div>
 
